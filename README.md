@@ -20,7 +20,7 @@ extension URL {
 
 ### Compare two class instances
 
-```
+```swift
 enum Deeplink {
     case home
     case videos(Video)
