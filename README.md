@@ -17,3 +17,29 @@ extension URL {
     }
 }
 ```
+
+### Compare two class instances
+
+```
+enum Deeplink {
+    case home
+    case videos(Video)
+    case preferences
+    
+    func associatedViewController() -> AnyClass {
+        switch self {
+            case .home:
+                return KidsHomeViewController.self
+            case .videos(_):
+                return KidsVideoViewController.self
+            case .preferences:
+                return KidsPreferenceViewController.self
+        }
+    }
+}
+
+// Somewhere else
+if myViewController.classForCoder == deeplink.associatedViewController() {
+    // Some code
+}
+```
