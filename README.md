@@ -18,6 +18,11 @@ extension URL {
 }
 ```
 
+### Check if string start with specials char
+```swift
+guard !isEmpty, let firstChar = first else { return false }
+return String(firstChar).range(of: ".*[^A-Za-z0-9].*", options: .regularExpression) != nil
+```
 ### Compare two class instances
 
 ```swift
