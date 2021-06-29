@@ -60,3 +60,17 @@ extension Data {
     }
 }
 ```
+### Decodable object from file
+```swift
+   if let filepath = Bundle.main.path(forResource: "xyz", ofType: "json") {
+    do {
+                let contents = try String(contentsOfFile: filepath)
+                let xyz = fromJSON(contents)
+                return xyz as! TenantFile
+            } catch {
+                fatalError()
+            }
+        } else {
+           fatalError()
+        }
+```
